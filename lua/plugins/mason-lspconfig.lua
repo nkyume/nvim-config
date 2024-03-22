@@ -1,8 +1,15 @@
 local config = function()
 	require("mason-lspconfig").setup({
 		ensure_installed = {
+			"efm",
+			-- Lua
 			"lua_ls",
+
+			-- Python
 			"jedi_language_server",
+
+			-- JS
+			"biome",
 		},
 	})
 end

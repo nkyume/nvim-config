@@ -10,6 +10,9 @@ local configus = function()
 	lspconfig.jedi_language_server.setup({
 		capabilities = capabilities,
 	})
+	lspconfig.biome.setup({
+		capabilities = capabilities,
+	})
 	--	lspconfig.sqlls.setup({
 	--		capabilities = capabilities,
 	--	})
@@ -26,10 +29,15 @@ local configus = function()
 	-- SQL
 	local sql_formatter = require("efmls-configs.formatters.sql-formatter")
 
+	-- java_script
+	local eslint_d = require("efmls-configs.linters.eslint_d")
+	local prettier = require("efmls-configs.formatters.prettier")
+
 	local languages = {
 		lua = { stylua, luacheck },
 		python = { flake8, yapf, isort },
 		sql = { sql_formatter },
+		java_script = { prettier, eslint_d },
 	}
 
 	local efmls_config = {
