@@ -1,0 +1,3 @@
+return {
+	"lifepillar/pgsql.vim",
+}
